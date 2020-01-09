@@ -80,7 +80,7 @@ export default class LoginScreen extends Component {
     };
 
     increaseHeightOfLogin = () => {
-        this.setState({ placeholderText: '99991397351' })
+        this.setState({ placeholderText: '(99) 99139-7351' });
 
         Animated.timing(this.loginHeight, {
             toValue: SCREEN_HEIGHT,
@@ -107,7 +107,7 @@ export default class LoginScreen extends Component {
 
         const marginTop = this.loginHeight.interpolate({
             inputRange: [150, SCREEN_HEIGHT],
-            outputRange: [25, 150],
+            outputRange: [25, 80],
         });
 
         const headerBackArrowOpacity = this.loginHeight.interpolate({
@@ -116,8 +116,8 @@ export default class LoginScreen extends Component {
         });
 
         const titleTextBottom = this.loginHeight.interpolate({
-            inputRange: [150, 400, SCREEN_HEIGHT],
-            outputRange: [0, 0, 100],
+            inputRange: [150, 300, SCREEN_HEIGHT],
+            outputRange: [0, 0, 50],
         });
 
         const titleTextLeft = this.loginHeight.interpolate({
@@ -141,7 +141,7 @@ export default class LoginScreen extends Component {
                         position: 'absolute',
                         height: 60,
                         width: 60,
-                        top: 60,
+                        top: 25,
                         left: 25,
                         zIndex: 100,
                         opacity: headerBackArrowOpacity
@@ -171,7 +171,7 @@ export default class LoginScreen extends Component {
                         bottom: this.keyboardHeight,
                         opacity: this.forwardArrowOpacity,
                         zIndex: 100,
-                        backgroundColor: '#54575e',
+                        backgroundColor: 'black',
                         alignItems: 'center',
                         justifyContent: 'center',
                         borderRadius: 30,
@@ -194,8 +194,9 @@ export default class LoginScreen extends Component {
                     <View
                         style={{
                             flex: 1,
-                            justifyContent: 'center',
+                            justifyContent: 'flex-end',
                             alignItems: 'center',
+                            bottom: 40
                         }}
                     >
                         <Animatable.View
@@ -218,6 +219,15 @@ export default class LoginScreen extends Component {
                                 UBER
                             </Text>
                         </Animatable.View>
+                    </View>
+
+                    <View
+                        style={{
+                            flex: 1,
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                        }}
+                    >
 
                         <Animatable.View
                             animation="slideInUp"
@@ -258,8 +268,8 @@ export default class LoginScreen extends Component {
                                     >
                                         <Animated.Text
                                             style={{
-                                                fontSize: 24,
-                                                color: 'gray',
+                                                fontSize: 18,
+                                                color: 'black',
                                                 position: 'absolute',
                                                 bottom: titleTextBottom,
                                                 left: titleTextLeft,
@@ -325,7 +335,7 @@ export default class LoginScreen extends Component {
                                 <Text
                                     style={{ color: '#5a7fdf', fontWeight: 'bold', }}
                                 >
-                                    Or connect using a social account
+                                    Or connect with social
                                 </Text>
                             </View>
                         </Animatable.View>
